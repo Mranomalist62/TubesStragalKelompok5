@@ -11,14 +11,13 @@ def quick_sort(arr):
     if len(arr) <= 1:
         return arr
     else:
-        
         pivot = arr[0]
         left = [x for x in arr if x < pivot]
         middle = [x for x in arr if x == pivot]
         right = [x for x in arr if x > pivot]
         return quick_sort(left) + middle + quick_sort(right)
 
-# test algoritma quick short dengan ukuran berbeda.
+# Test algoritma quick sort dengan ukuran berbeda
 sizes = [10, 200, 1000, 3000, 7000]
 runtimes = []
 
@@ -36,13 +35,13 @@ if 'Revenue' in restaurant_data.columns:
 else:
     print("The column 'Revenue' does not exist in the dataset.")
 
-# gambakan grafik matlib dari hasilnya
-print()
+# Menampilkan dalam graf
 plt.figure(figsize=(10, 6))
 plt.plot(sizes, runtimes, marker='o', linestyle='-', color='b', label='Quick Sort Runtime')
 plt.title('Quick Sort Runtime vs. Data Size', fontsize=14)
 plt.xlabel('Data Size', fontsize=12)
 plt.ylabel('Runtime (seconds)', fontsize=12)
+plt.ylim(0, 5)  # Mengatur batasan sumbu y
 plt.grid(True)
 plt.legend()
 plt.show()
